@@ -1,0 +1,37 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.content-warp{
+    height: 200px;
+    width: 65%;
+    margin: 100px auto;
+}
+
+.avatar{
+    display:inline-block;
+    width: 20%;
+}
+
+.myImg {
+    margin-top: -200px;
+    width: 200px;
+}
+.input-comment{
+    display:inline-block;
+    width: 70%;
+}
+
+textArea{
+    margin-top: 100px;
+    width: 99%;
+}
+
+.message-title{
+    width: 60%  ;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 50px;
+}

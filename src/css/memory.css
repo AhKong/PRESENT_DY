@@ -1,0 +1,21 @@
+.memory-warp{
+
+    width: 70%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.carouselImg{
+    width:700px;
+    margin:auto;
+}
+
+.memoryTitle{
+    width: 100%;
+    text-align: center;
+}
+
+.imgList{
+    width: 62%;
+    margin: 30px auto;
+}

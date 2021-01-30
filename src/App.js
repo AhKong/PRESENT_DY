@@ -1,25 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-
+import 'antd/dist/antd.css'
+import { Route } from 'react-router-dom';
+import MainPage from "./page/mainPage";
+import MemoryPage from "./page/memoryPage";
+import SongsPage from "./page/SongsPage";
+import MessagePage from "./page/MessagePage";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    return (
+        <div>
+            <Route path="/" component={MainPage} exact/>
+            <Route path="/WeLoveYou" component={MemoryPage}/>
+            <Route path="/listen-to-my-message" component={MessagePage}/>
+            <Route path="/congratulations-on-your-graduation" component={SongsPage}></Route>
+        </div>
+
+    );
 }
 
 export default App;
