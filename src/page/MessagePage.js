@@ -1,108 +1,61 @@
-import React from 'react';
+import React ,{useEffect,useState} from 'react';
 import { Form, Input, InputNumber, Button,Comment, Tooltip, List } from 'antd';
 import moment from 'moment';
 import '../css/message.css';
+import axios from "axios";
 
 const MessagePage = () => {
 
+    const [listArr,setListArr] = useState([]);
+
+    useEffect( () =>{
+        loadCommentList()
+    },[])
     const { TextArea } = Input;
-    const data = [
-        {
 
-            author: '박지훈',
-            content: (
-                <p>
-                    도연아 졸업축하해^^
-                </p>
-            ),
-            datetime: (
-                <Tooltip title={moment().subtract(1, 'days').format('YYYY-MM-DD HH:mm:ss')}>
-                    <span>{moment().subtract(1, 'days').fromNow()}</span>
-                </Tooltip>
-            ),
-        },
-        {
+    const loadCommentList = () => {
+        let tempArray = new Array();
+        axios.get('http://localhost:8080/comment-list')
+            .then(res =>{
+                console.log(res.data[0].created_at)
+                for(let i = 0; i<res.data.length;i++){
+                    const dateTime = res.data[0].created_at;
+                    const obj = {
+                        author : res.data[i].username,
+                        content: (
+                            <p>
+                                { res.data[i].comment}
+                            </p>
+                        ),
+                        datetime: (
+                                <span>{dateTime}</span>
 
-            author: 'Han Solo',
-            content: (
-                <p>
-                    We supply a series of design principles, practical patterns and high quality design
-                    resources (Sketch and Axure), to help people create their product prototypes beautifully and
-                    efficiently.
-                </p>
-            ),
-            datetime: (
-                <Tooltip title={moment().subtract(2, 'days').format('YYYY-MM-DD HH:mm:ss')}>
-                    <span>{moment().subtract(2, 'days').fromNow()}</span>
-                </Tooltip>
-            ),
-        },
-        {
-            author: 'Han Solo',
-            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-            content: (
-                <p>
-                    We supply a series of design principles, practical patterns and high quality design
-                    resources (Sketch and Axure), to help people create their product prototypes beautifully and
-                    efficiently.
-                </p>
-            ),
-            datetime: (
-                <Tooltip title={moment().subtract(2, 'days').format('YYYY-MM-DD HH:mm:ss')}>
-                    <span>{moment().subtract(2, 'days').fromNow()}</span>
-                </Tooltip>
-            ),
-        }
-    ];
+                        ),
+                    }
+                    tempArray.push(obj);
+                    if(i === (res.data.length -1)){
+                        setListArr(tempArray);
+                    }
 
-    const Editor = ({ onChange, onSubmit, submitting, value }) => (
-        <>
-            <Form.Item>
-                <TextArea rows={4} onChange={onChange} value={value} />
-            </Form.Item>
-            <Form.Item>
-                <Button htmlType="submit" loading={submitting} onClick={onSubmit} type="primary">
-                    Add Comment
-                </Button>
-            </Form.Item>
-        </>
-    );
+                }
+            }).catch(err => {
+            console.log(err);
+        })
+    }
 
     const handleSubmit = () => {
-        if (!this.state.value) {
-            return;
+        const username = document.getElementById('username').value;
+        const comment = document.getElementById('comment').value;
+        console.log(username,comment)
+        const sendObj = {
+            username,comment
         }
-
-        this.setState({
-            submitting: true,
-        });
-
-        setTimeout(() => {
-            this.setState({
-                submitting: false,
-                value: '',
-                comments: [
-                    {
-                        author: 'Han Solo',
-                        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-                        content: <p>{this.state.value}</p>,
-                        datetime: moment().fromNow(),
-                    },
-                    ...this.state.comments,
-                ],
-            });
-        }, 1000);
-    };
-
-    const handleChange = e => {
-        this.setState({
-            value: e.target.value,
-        });
-    };
-
-    const onFinish = (values) => {
-        console.log(values);
-    };
+        axios.post("http://localhost:8080/comment",sendObj)
+            .then(res=> {
+                console.log(res);
+                loadCommentList()
+            })
+    }
 
     return (
 
@@ -118,31 +71,36 @@ const MessagePage = () => {
 
             <div className="input-comment">
 
-                <Form  name="nest-messages" onFinish={onFinish}     >
+                <Form  name="nest-messages"  >
                     <Form.Item label="작성자">
-                   <input />
+                   <input id="username" />
                     </Form.Item>
                     <Form.Item label="메시지">
-                        <TextArea  rows={3}/>
+                        <TextArea  id="comment" rows={3}/>
                     </Form.Item>
                     <Form.Item wrapperCol={{ offset: 22 }}>
-                        <Button type="primary" htmlType="submit">
-                            Submit
-                        </Button>
+                        <Button type="primary" onClick ={handleSubmit}>작성</Button>
                     </Form.Item>
                 </Form>
             </div>
             <List
                 className="comment-list"
-                header={`${data.length} 개의 축하메세지`}
+                header={`${listArr.length} 개의 축하메세지`}
                 itemLayout="horizontal"
-                dataSource={data}
+                dataSource={listArr}
+                pagination={{
+                    onChange: page => {
+                        console.log(page);
+                    },
+                    pageSize: 10,
+                }}
                 renderItem={item => (
                     <li>
                         <Comment
 
                             author={item.author}
                             content={item.content}
+                            datetime={item.datetime}
 
                         />
                         {localStorage.getItem("isMe") === true ?<Button>삭제</Button>:null    }
