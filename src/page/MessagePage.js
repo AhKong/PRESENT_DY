@@ -15,7 +15,7 @@ const MessagePage = () => {
 
     const loadCommentList = () => {
         let tempArray = new Array();
-        axios.get('http://49.165.100.110/comment-list')
+        axios.get('http://localhost/comment-list')
             .then(res =>{
                 console.log(res.data[0].created_at)
                 for(let i = 0; i<res.data.length;i++){
@@ -56,7 +56,7 @@ const MessagePage = () => {
         const sendObj = {
             username,comment
         }
-        axios.post("http://49.165.100.110/comment",sendObj)
+        axios.post("http://localhost/comment",sendObj)
             .then(res=> {
                 console.log(res);
                 loadCommentList()
