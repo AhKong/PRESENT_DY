@@ -15,7 +15,7 @@ const MessagePage = () => {
 
     const loadCommentList = () => {
         let tempArray = new Array();
-        axios.get('http://localhost:8080/comment-list')
+        axios.get('http://49.165.100.110/comment-list')
             .then(res =>{
                 console.log(res.data[0].created_at)
                 for(let i = 0; i<res.data.length;i++){
@@ -46,11 +46,18 @@ const MessagePage = () => {
     const handleSubmit = () => {
         const username = document.getElementById('username').value;
         const comment = document.getElementById('comment').value;
-        console.log(username,comment)
+        if(username == ''){
+            alert('작성자 이름을 입력하지 않으시면 제 멋대로 이름을 짓겠습니다! 동의하신다면 익명으로 글을 남겨주세요!');
+        }
+        if(comment == ''){
+            alert('축하메시지 써주기로 했으면서,,,,도연이를 향한 당신의 마음을 알려주세요 🙈')
+            document.getElementById('comment').value='';
+            return;
+        }
         const sendObj = {
             username,comment
         }
-        axios.post("http://localhost:8080/comment",sendObj)
+        axios.post("http://49.165.100.110/comment",sendObj)
             .then(res=> {
                 console.log(res);
                 loadCommentList()
