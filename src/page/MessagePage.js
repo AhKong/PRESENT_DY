@@ -42,7 +42,6 @@ const MessagePage = () => {
             console.log(err);
         })
     }
-
     const handleSubmit = () => {
         const username = document.getElementById('username').value;
         const comment = document.getElementById('comment').value;
