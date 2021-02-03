@@ -1,19 +1,18 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import '../css/memory.css';
 import { Carousel ,List, Avatar, Space} from 'antd';
 const MemoryPage = () =>{
     const listData = [];
-    for (let i = 0; i < 3; i++) {
+
+    for (let i = 0; i < 10; i++) {
         listData.push({
             href: 'https://ant.design',
             title: `ant design part ${i}`,
             avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-
             content:
                 '잠와',
         });
     }
-
 
 
     return (
@@ -38,6 +37,12 @@ const MemoryPage = () =>{
                 <List
                     itemLayout="vertical"
                     size="small"
+                    pagination={{
+                        onChange: page => {
+                            console.log(page);
+                        },
+                        pageSize: 4,
+                    }}
                     dataSource={listData}
                     renderItem={item => (
                         <List.Item
