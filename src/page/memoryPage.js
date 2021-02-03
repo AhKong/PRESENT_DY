@@ -7,6 +7,7 @@ import  photo3 from '../resource/photo3.jpeg';
 import  photo4 from '../resource/photo4.jpeg';
 import  photo5 from '../resource/photo5.jpeg';
 import  photo6 from '../resource/photo6.jpeg';
+import  photo7 from '../resource/photo7.jpeg';
 
 
 const MemoryPage = () =>{
@@ -64,6 +65,13 @@ const MemoryPage = () =>{
             '사실상 이게 본론이라고 할 수 있지. 우리의 끝없는 논쟁 오늘로써 종결한다. 반박 안받습니다. 반박 안받고 그냥 졸업 축하드려요1!!!' +
             '졸업 후 니가 하는 모든 일을 우리는 응원해 말 안해도 알지 그러니까 돈 많이 벌어서 우리 호강시켜줘 언니랑 나 기대하고 있을게 우리는 널 너무너무 사랑해 ~~~~~' ,
         photo : 'http://img1.daumcdn.net/thumb/R1024x0/?fname=http://i1.daumcdn.net/cfile282/image/2432A83C5948DCF91A0684'
+    });
+    listData.push({
+        title: '마지막으로 지훈이는 윙깅이야',
+        content:
+            '사실상 이게 본론이라고 할 수 있지. 우리의 끝없는 논쟁 오늘로써 종결한다. 반박 안받습니다. 반박 안받고 그냥 졸업 축하드려요1!!!' +
+            '졸업 후 니가 하는 모든 일을 우리는 응원해 말 안해도 알지 그러니까 돈 많이 벌어서 우리 호강시켜줘 언니랑 나 기대하고 있을게 우리는 널 너무너무 사랑해 ~~~~~' ,
+        photo : photo7
     });
 
     return (
