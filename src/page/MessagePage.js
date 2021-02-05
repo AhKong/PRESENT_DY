@@ -15,7 +15,7 @@ const MessagePage = () => {
 
     const loadCommentList = () => {
         let tempArray = new Array();
-        axios.get('http://localhost/comment-list')
+        axios.get('http://localhost:8080/comment-list')
             .then(res =>{
                 console.log(res.data[0].created_at)
                 for(let i = 0; i<res.data.length;i++){

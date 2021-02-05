@@ -8,6 +8,7 @@ import  photo4 from '../resource/photo4.jpeg';
 import  photo5 from '../resource/photo5.jpeg';
 import  photo6 from '../resource/photo6.jpeg';
 import  photo7 from '../resource/photo7.jpeg';
+import photo8 from '../resource/photo8.jpeg';
 
 
 const MemoryPage = () =>{
@@ -67,29 +68,23 @@ const MemoryPage = () =>{
         photo : 'http://img1.daumcdn.net/thumb/R1024x0/?fname=http://i1.daumcdn.net/cfile282/image/2432A83C5948DCF91A0684'
     });
     listData.push({
-        title: '마지막으로 지훈이는 윙깅이야',
+        title: '사라진 오빠를 찾는 여정에도 우린 함께하자',
         content:
-            '사실상 이게 본론이라고 할 수 있지. 우리의 끝없는 논쟁 오늘로써 종결한다. 반박 안받습니다. 반박 안받고 그냥 졸업 축하드려요1!!!' +
-            '졸업 후 니가 하는 모든 일을 우리는 응원해 말 안해도 알지 그러니까 돈 많이 벌어서 우리 호강시켜줘 언니랑 나 기대하고 있을게 우리는 널 너무너무 사랑해 ~~~~~' ,
+            '지금은 살짝 가려졌지만 내 완식 오빠의 모습을 찾은 여정에도 우린 함께일꺼야 늘 그래왔듯*^^ 도연이 졸업 진짜 완전 축하하고 앞으로 어떤일을 도전하게되던 너는 잘 해낼꺼라고 믿어 항상 그래왔듯이! 설령 힘든 일이 생겨도 아름이랑 내가 옆에서 으쌰으쌰 해줄테니까 걱정말고 하고싶은거 다~해보도록!!사랑한다~~ ' ,
         photo : photo7
     });
 
     return (
         <div className="memory-warp">
             <div className="memoryTitle">
-                <h1>남서울대 최고의 아웃풋 === 이도연</h1>
+                <p ><span className="title-span">You are the best output of NSU :-)</span></p>
             </div>
             <div>
                 <Carousel autoplay>
                     <div>
-                        <img className="carouselImg" src="https://cdnweb01.wikitree.co.kr/webdata/editor/201710/15/img_20171015122006_4a43f846.jpg"/>
+                        <img className="carouselImg" src={photo8}/>
                     </div>
-                    <div>
-                        <img className="carouselImg" src="https://cdnweb01.wikitree.co.kr/webdata/editor/201710/15/img_20171015122006_4a43f846.jpg"/>
-                    </div>
-                    <div>
-                        <img className="carouselImg" src="https://cdnweb01.wikitree.co.kr/webdata/editor/201710/15/img_20171015122006_4a43f846.jpg"/>
-                    </div>
+
                 </Carousel>
             </div>
             <div className="imgList">

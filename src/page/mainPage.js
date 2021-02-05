@@ -13,11 +13,7 @@ const MainPage = ({history}) => {
 
     const goMemoryPage = () =>{
         console.log('클릭 이벤트 확인')
-        let answer = prompt('해당 메뉴를 이용하기 위해서는 비밀번호가 필요합니다 맞춰보세요~ 힌트는 우리가 도연이에게 전하고 싶은 말')
-        axios.get('/test/'+answer)
-            .then(res => {
-                console.log(res);
-            })
+        let answer = prompt('해당 메뉴를 이용하기 위해서는 비밀번호가 필요합니다 맞춰보세요~ 힌트는 우리가 도연이에게 전하고 싶은 말');
         if(answer === '도연아사랑해' || answer ==='도연아졸업축하해'){
             alert('도연이가 맞구나!')
             history.push('/weLoveYou')
