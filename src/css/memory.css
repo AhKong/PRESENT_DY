@@ -32,6 +32,7 @@
 .title-span{
     color: deeppink;
 }
+
 @media all and (min-width:1025px) {
     .carouselImg{
         width:700px;

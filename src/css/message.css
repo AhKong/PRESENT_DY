@@ -16,12 +16,11 @@ body,html {
 }
 
 .myImg {
-    margin-top: -200px;
-    width: 200px;
+    display: none;
 }
 .input-comment{
     display:inline-block;
-    width: 70%;
+    width: 100%;
 }
 
 textArea{
@@ -34,4 +33,16 @@ textArea{
     text-align: center;
     margin: auto;
     padding-bottom: 50px;
+}
+@media all and (min-width:1025px) {
+    .myImg {
+        display: block;
+        margin-top: -200px;
+        width: 200px;
+    }
+
+    .input-comment{
+        display:inline-block;
+        width: 70%;
+    }
 }
