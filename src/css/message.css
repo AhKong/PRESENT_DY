@@ -6,7 +6,7 @@ body,html {
 
 .content-warp{
     height: 200px;
-    width: 65%;
+    width: 80%;
     margin: 100px auto;
 }
 
@@ -15,12 +15,11 @@ body,html {
     width: 20%;
 }
 
-.myImg {
-    display: none;
-}
+
 .input-comment{
+    margin-left: 100px ;
     display:inline-block;
-    width: 100%;
+    width: 60%;
 }
 
 textArea{
@@ -29,20 +28,17 @@ textArea{
 }
 
 .message-title{
-    width: 60%  ;
+    width: 100%;
     text-align: center;
     margin: auto;
     padding-bottom: 50px;
 }
-@media all and (min-width:1025px) {
-    .myImg {
-        display: block;
-        margin-top: -200px;
-        width: 200px;
-    }
 
-    .input-comment{
-        display:inline-block;
-        width: 70%;
-    }
+.myImg {
+    display: block;
+
+    margin-top:-180px;
+    width: 200px;
 }
+
+

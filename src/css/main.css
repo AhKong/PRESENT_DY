@@ -1,8 +1,9 @@
 
 .menu {
-    width: 200px;
-    height: 200px;
-    margin: 10px auto;
+    width: 230px;
+    height: 230px;
+    display: inline-block;
+    margin-left: 10px;
     border-radius:150px;
     vertical-align:middle;
     line-height:150px;
@@ -14,41 +15,13 @@
 .title{
     background-color:#FFC001;
     width:70%;
-    height:100px;
+    height:250px;
     margin:auto;
     text-align: center;
-    padding-top: 20px;
-    font-size: 20px;
+    padding-top: 10px;
+    font-size: 50px;
+    font-weight: 700;
 
-}
-
-
-@media all and (min-width:1025px) {
-    .menu {
-        width: 300px;
-        height: 300px;
-        display: inline-block;
-
-        margin-left: 60px;
-        border-radius:150px;
-        vertical-align:middle;
-        line-height:150px;
-        text-align:center;
-        font-size:30px; color:#fff;
-
-    }
-
-    .title{
-        background-color:#FFC001;
-        width:70%;
-        height:250px;
-        margin:auto;
-        text-align: center;
-        padding-top: 10px;
-        font-size: 50px;
-        font-weight: 700;
-
-    }
 }
 
 .songFont{
@@ -57,7 +30,7 @@
 }
 
 .first{
-    background-image: url("https://file3.instiz.net/data/cached_img/upload/2018/10/15/0/131cd285e4de647fcf386cfbd79b52b4.jpg");
+    background-image: url("https://pbs.twimg.com/media/Ethq42qU0AARjg_?format=jpg&name=900x900  ");
     background-size: cover;
 
 }
@@ -71,21 +44,12 @@
     background-image: url("https://file3.instiz.net/data/cached_img/upload/2019/02/01/11/1e1585ae7c6cf33afe29b20462cda03a.jpg");
     background-size: cover;
 }
-.footer {
-    background-color: #A5A5A5;
-    width: 70%;
-    height: 50px;
-    text-align: center;
-    margin: 130px auto;
-
-
-}
 
 .menu-warp {
-    width :70%;
+    width :95%;
     height:auto;
 
-    margin:50px auto;
+    margin:100px auto;
 
 }
 

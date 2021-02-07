@@ -7,13 +7,6 @@ th, td {
     padding: 10px;
 }
 
-.warp-contents{
-    width: 100%;
-    height: auto;
-    margin: auto;
-
-}
-
 .checkBoxTd{
     width: 30px;
 }
@@ -22,16 +15,16 @@ th, td {
     width: 200px;
 }
 .artistTd{
-    width: 120px;
+    width: 200px;
 }
 .likeTd{
-    width: 110px;
+    width: 200px;
 }
 .songTd{
     width:350px;
 }
 .imgDiv{
-    width: 50%;
+    width: 70%;
     margin: auto;
 }
 .mySpan {
@@ -40,34 +33,26 @@ th, td {
     color: #93D302;
 }
 
-body{
-    width: 100%;
-    background-color: #EDEFCF;
-
-}
-
 
 .nickName{
     font-size: 20px;
     font-weight: 800;
     color: #FC86AA;
 }
-@media all and (min-width:1025px) {
-    .warp-contents{
-        width: 50%;
-        margin: auto;
-        padding-top: 200px;
-    }
 
-    .nickName{
-        font-size: 30px;
-        font-weight: 800;
-        color: #FC86AA;
-    }
+.warp-contents{
+    width: 80%;
+    margin: auto;
+    padding-top: 200px;
+}
 
-    .mySpan {
-        font-size: 30px;
-        font-weight: 800;
-    }
+.nickName{
+    font-size: 30px;
+    font-weight: 800;
+    color: #FC86AA;
+}
 
+.mySpan {
+    font-size: 30px;
+    font-weight: 800;
 }
